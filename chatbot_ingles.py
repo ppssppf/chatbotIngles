@@ -307,4 +307,5 @@ async def evaluar_respuestas_multiples(respuestas: list[RespuestaEntrada]):
     return {"resultados": resultados}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Para desarrollo local
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
